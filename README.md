@@ -13,6 +13,20 @@ Projeto Diamante 02 - Java Advanced
 
 Todos os comandos devem ser executados no PowerShell, na raiz do projeto `delivery-system`. Utilize `curl.exe` (com `.exe`) para fazer as requisições HTTP.
 
+
+## Assistente (Spring AI)
+
+O projeto usa um modelo local via Ollama (API compatível com OpenAI).
+
+1. Instalar o Ollama: https://ollama.com/download
+2. Baixar o modelo: `ollama pull llama3.2`
+3. Deixar o Ollama rodando (porta 11434)
+
+Para usar a OpenAI no lugar, definir a variável de ambiente `OPENAI_API_KEY`
+e ajustar `spring.ai.openai.base-url` e `spring.ai.openai.chat.options.model`
+no `application.properties` do order-service.
+
+
 ## 1. O que precisa estar rodando
 
 Inicie cada comando em um terminal separado, na seguinte ordem.
