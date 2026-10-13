@@ -26,4 +26,9 @@ public class GlobalExceptionHandler {
         String msg = e instanceof BadRequestException ? e.getMessage() : "Invalid request body";
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", msg));
     }
+
+    @ExceptionHandler(PaymentFailedException.class)
+    public ResponseEntity<Map<String, String>> paymentFailed(PaymentFailedException e) {
+        return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(Map.of("error", e.getMessage()));
+    }
 }
